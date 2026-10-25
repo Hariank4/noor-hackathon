@@ -39,6 +39,7 @@ Copy `.env.example` to `.env.local`, then restart the dev server.
 | `NEXT_PUBLIC_UNSTOP_URL` | Official Unstop registration link. Powers `/go/register` and the QR code. |
 | `NEXT_PUBLIC_BROCHURE_URL` | Brochure file or URL. Without it the button reads "Brochure coming soon". |
 | `NEXT_PUBLIC_SITE_URL` | Canonical URL for SEO and social cards. |
+| `NEXT_PUBLIC_WHATSAPP_URL` | WhatsApp group invite. Hidden until the client approves it (`flags.showWhatsApp`). |
 | `NEXT_PUBLIC_PREVIEW` | Set to `1` on preview deployments only. Shows fees and FAQ, which await client approval. |
 
 ## Changing content
