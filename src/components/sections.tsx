@@ -317,8 +317,10 @@ export function Footer() {
         <p>Register only through the official Unstop link on this site.</p>
         <a href="/privacy">Privacy</a>
         <p className="foot__credit">
-          Made by <a href={links.authorSite} target="_blank" rel="noopener noreferrer">Hariank Juneja</a>
-          {" · "}<a href={links.authorLinkedin} target="_blank" rel="noopener noreferrer">LinkedIn</a>
+          <span>
+            Made by <a href={links.authorSite} target="_blank" rel="noopener noreferrer">Hariank Juneja</a>
+            {" · "}<a href={links.authorLinkedin} target="_blank" rel="noopener noreferrer">LinkedIn</a>
+          </span>
         </p>
       </div>
     </footer>

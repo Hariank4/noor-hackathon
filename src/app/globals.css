@@ -233,6 +233,16 @@ ul, ol { padding: 0; list-style: none; }
 .closing { margin-top: 56px; text-align: center; font: italic 300 clamp(1.4rem, 3.5vw, 2.2rem) var(--display); color: var(--gold-soft); }
 .foot { padding: 28px 0; border-top: 1px solid var(--line); font-size: 0.82rem; color: var(--muted); }
 .foot__credit, .foot__credit a { font-weight: 700; color: var(--gold); }
+@supports (background-clip: text) {
+  .foot__credit span {
+    color: transparent;
+    background: linear-gradient(105deg, var(--gold) 38%, #fff4c9 50%, var(--gold) 62%) 100% 0 / 250% 100% no-repeat;
+    -webkit-background-clip: text; background-clip: text;
+    animation: credit-shimmer 3.2s ease-in-out infinite;
+  }
+  .foot__credit a { color: inherit; text-decoration-color: var(--gold); }
+}
+@keyframes credit-shimmer { to { background-position: 0% 0; } }
 .foot .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 8px 28px; }
 .prose p + p, .prose h2 { margin-top: 1.2em; }
 .prose h2 { font: 400 1.6rem var(--display); color: var(--gold-soft); }
@@ -325,6 +335,7 @@ ul, ol { padding: 0; list-style: none; }
   .sky::after, .orbit, .strip__track { animation: none; }
   .strip__view { overflow-x: auto; mask-image: none; }
   .sec .wrap > *, .foot .wrap > *, .themes li, .rounds li, .prizes li, .rubric li, .rules__list li, .team li, .fees__card, .faq details, .steps li, .reg__side > * { animation: none; }
+  .foot__credit span { animation: none; }
   .btn--shiny, .btn--shiny::before, .btn--shiny::after, .btn--shiny span::before { animation: none; }
   *, *::before, *::after { transition-duration: 0.01ms !important; }
   .btn:hover, .rounds li:hover, .prizes li:hover, .team li:hover, .fees__card:hover { transform: none; }
