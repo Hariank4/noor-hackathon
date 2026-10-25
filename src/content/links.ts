@@ -9,7 +9,7 @@ export const flags = {
 };
 
 export const links = {
-  unstop: process.env.NEXT_PUBLIC_UNSTOP_URL ?? "",
+  register: process.env.NEXT_PUBLIC_REGISTER_URL ?? "",
   brochure: process.env.NEXT_PUBLIC_BROCHURE_URL ?? "",
   // Generic MRU pin until the client approves the exact venue location (BRD O-05).
   mapQuery: "Manav Rachna University, Faridabad",

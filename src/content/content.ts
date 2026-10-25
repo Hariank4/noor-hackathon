@@ -18,7 +18,7 @@ export const event = {
     "Whether you are a programmer, designer, entrepreneur, researcher, or creative thinker, Noor is an opportunity to work with like-minded innovators, showcase your abilities, and transform ideas into meaningful solutions.",
   ],
   audience: ["Programmers", "Designers", "Entrepreneurs", "Researchers", "Creative thinkers"],
-  teamSize: "2–5 members", // BRD: subject to confirmation against the Unstop form
+  teamSize: "2–5 members", // BRD: subject to confirmation against the registration form
   closing: "Ideas that matter. Solutions that shine.",
 };
 
@@ -41,6 +41,7 @@ export const prizes = [
   { rank: "Winner", amount: "₹15,000", perk: "Internship opportunity" },
   { rank: "First runner-up", amount: "₹10,000", perk: "Internship opportunity" },
   { rank: "Second runner-up", amount: "₹5,000", perk: "Internship opportunity" },
+  { rank: "WIE Winning Team", amount: "$100", note: "Worth of AI credits · Women Innovation Field Ideas" },
 ];
 
 // Shortlisting criteria as supplied by the organisers (25 Oct). No weights or descriptions yet.
@@ -49,7 +50,7 @@ export const rubric = ["Presentation", "Design thinking", "Feasibility", "Innova
 export const eligibility = [
   "Open to college and university students.",
   "Inter-college teams are allowed.",
-  "Teams of 2–5 members, matching the official Unstop form.",
+  "Teams of 2–5 members.",
   "Registration details must be accurate and complete.",
 ];
 
@@ -68,7 +69,7 @@ export const rules = [
 ];
 
 export const steps = [
-  "Register through the official registration link on Unstop.",
+  "Register through the official registration form linked on this site.",
   "Enter your team name and the details of the team leader and every member.",
   "For each participant: full name, course/program, college/university, location, gender, mobile number, email, current year of study and college ID card.",
   "Pay the team registration fee as per the official payment instructions.",

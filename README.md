@@ -3,7 +3,7 @@
 Official single-page website for **Noor Hackathon 2K26** — *Be the Noor — Illuminate the Way*.
 2–3 November 2026, Manav Rachna University, Faridabad (offline).
 
-Registration, payment and verification happen on [Unstop](https://unstop.com). This site informs,
+Registration is a Google Form for now (the client dropped Unstop). This site informs,
 builds trust and links out (button + QR code). There is no backend, database, login or participant data.
 
 ## Stack
@@ -36,7 +36,7 @@ Copy `.env.example` to `.env.local`, then restart the dev server.
 
 | Variable | Purpose |
 |---|---|
-| `NEXT_PUBLIC_UNSTOP_URL` | Official Unstop registration link. Powers `/go/register` and the QR code. |
+| `NEXT_PUBLIC_REGISTER_URL` | Registration link. Defaults to the Google Form in `next.config.ts`. Powers `/go/register` and the QR code. |
 | `NEXT_PUBLIC_BROCHURE_URL` | Brochure file or URL. Without it the button reads "Brochure coming soon". |
 | `NEXT_PUBLIC_SITE_URL` | Canonical URL for SEO and social cards. |
 | `NEXT_PUBLIC_WHATSAPP_URL` | WhatsApp group invite. Hidden until the client approves it (`flags.showWhatsApp`). |
@@ -52,7 +52,7 @@ Copy `.env.example` to `.env.local`, then restart the dev server.
 
 Every Register button goes to `/go/register`, a redirect defined in `next.config.ts` that adds
 `utm_source`, `utm_medium` and `utm_campaign` and keeps `utm_content`. The QR code encodes the direct
-Unstop URL with `utm_content=qr`, so it keeps working even if this site is down.
+registration URL with `utm_content=qr`, so it keeps working even if this site is down.
 
 ## Intro
 

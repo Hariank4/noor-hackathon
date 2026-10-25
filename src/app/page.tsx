@@ -37,9 +37,9 @@ const navItems: [string, string][] = [
 ];
 
 export default async function Home() {
-  // The QR encodes the direct Unstop URL (not our redirect) so it still works if this site is down.
-  const qr = links.unstop
-    ? await QRCode.toDataURL(withUtm(links.unstop, "qr"), { margin: 1, width: 360, errorCorrectionLevel: "Q", color: { dark: "#050505", light: "#F7F0E8" } })
+  // The QR encodes the direct registration URL (not our redirect) so it still works if this site is down.
+  const qr = links.register
+    ? await QRCode.toDataURL(withUtm(links.register, "qr"), { margin: 1, width: 360, errorCorrectionLevel: "Q", color: { dark: "#050505", light: "#F7F0E8" } })
     : null;
 
   return (

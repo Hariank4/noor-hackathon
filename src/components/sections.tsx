@@ -33,7 +33,7 @@ export function Hero() {
         <p className="hero__mode">{event.mode}</p>
         <Countdown />
         <div className="cta">
-          <a className="btn--shiny" href={register("hero")}><span>Register on Unstop</span></a>
+          <a className="btn--shiny" href={register("hero")}><span>Register now</span></a>
           {links.brochure ? (
             <a className="btn" href={links.brochure} target="_blank" rel="noopener noreferrer">Download brochure</a>
           ) : (
@@ -119,6 +119,7 @@ export function Prizes() {
               <span className="prizes__rank">{p.rank}</span>
               <span className="prizes__amt">{p.amount}</span>
               {p.perk && <span className="prizes__perk">+ {p.perk}</span>}
+              {p.note && <span className="prizes__perk">{p.note}</span>}
             </li>
           ))}
         </ul>
@@ -186,16 +187,16 @@ export function Register({ qr }: { qr: string | null }) {
         <div className="reg">
           <ol className="steps">{steps.map((s) => <li key={s}>{s}</li>)}</ol>
           <aside className="reg__side">
-            <a className="btn--shiny" href={register("how")}><span>Register on Unstop</span></a>
+            <a className="btn--shiny" href={register("how")}><span>Register now</span></a>
             {qr && (
               <figure className="qr">
-                <img src={qr} width={180} height={180} alt="QR code that opens the official Unstop registration page" />
-                <figcaption>Scan to register on Unstop</figcaption>
+                <img src={qr} width={180} height={180} alt="QR code that opens the official registration form" />
+                <figcaption>Scan to register</figcaption>
               </figure>
             )}
             <p className="note">
               Registration is complete only after the required information and payment details are submitted as instructed.
-              Register only through the official Unstop link on this site.
+              Register only through the official registration link on this site.
             </p>
           </aside>
         </div>
@@ -314,7 +315,7 @@ export function Footer() {
     <footer className="foot">
       <div className="wrap">
         <p>© 2026 {event.name}</p>
-        <p>Register only through the official Unstop link on this site.</p>
+        <p>Register only through the official registration link on this site.</p>
         <a href="/privacy">Privacy</a>
         <p className="foot__credit">
           <span>
