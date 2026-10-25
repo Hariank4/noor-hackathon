@@ -10,9 +10,6 @@ describe("published content", () => {
   it("shows no scoring weights in the rubric", () => {
     expect(JSON.stringify(content.rubric)).not.toMatch(/%|points?\b/i);
   });
-  it("publishes the WIE award with the organiser-supplied wording", () => {
-    expect(content.wieAward).toBe("WIE Theme Winner: $100 AI credits");
-  });
   it("keeps the event start in IST", () => {
     expect(Date.parse(content.event.startsAt)).toBe(Date.UTC(2026, 10, 1, 18, 30));
   });

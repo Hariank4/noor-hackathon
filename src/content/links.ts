@@ -6,7 +6,6 @@ export const flags = {
   showFees: preview, // BRD O-03: client to confirm fees should be shown
   showFaq: true, // organiser-supplied FAQ, approved to show (25 Oct)
   showWhatsApp: false, // client to confirm the group link may be public
-  showWie: true, // WIE Theme Winner: $100 AI credits, wording supplied by the organiser
 };
 
 export const links = {

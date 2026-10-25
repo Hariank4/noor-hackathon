@@ -1,4 +1,4 @@
-import { event, themes, rounds, prizes, wieAward, rubric, eligibility, rules, steps, fees, partners, team, faqs } from "../content/content";
+import { event, themes, rounds, prizes, rubric, eligibility, rules, steps, fees, partners, team, faqs } from "../content/content";
 import { flags, links } from "../content/links";
 import Countdown from "./Countdown";
 import { Head, Icon, Rule, Sparkle } from "./ui";
@@ -122,7 +122,6 @@ export function Prizes() {
             </li>
           ))}
         </ul>
-        {flags.showWie && wieAward && <p className="note">{wieAward}</p>}
       </div>
     </section>
   );
@@ -317,7 +316,7 @@ export function Footer() {
         <p>© 2026 {event.name}</p>
         <p>Register only through the official Unstop link on this site.</p>
         <a href="/privacy">Privacy</a>
-        <p>
+        <p className="foot__credit">
           Made by <a href={links.authorSite} target="_blank" rel="noopener noreferrer">Hariank Juneja</a>
           {" · "}<a href={links.authorLinkedin} target="_blank" rel="noopener noreferrer">LinkedIn</a>
         </p>

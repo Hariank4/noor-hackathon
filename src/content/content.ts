@@ -42,7 +42,6 @@ export const prizes = [
   { rank: "First runner-up", amount: "₹10,000" },
   { rank: "Second runner-up", amount: "₹5,000" },
 ];
-export const wieAward: string | null = "WIE Theme Winner: $100 AI credits"; // wording supplied by the organiser (25 Oct)
 
 // Shortlisting criteria as supplied by the organisers (25 Oct). No weights or descriptions yet.
 export const rubric = ["Presentation", "Design thinking", "Feasibility", "Innovation", "Product market fit", "Pitch/Q&A"];
