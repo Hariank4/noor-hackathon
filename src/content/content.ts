@@ -106,8 +106,10 @@ export const faqs = [
   { q: "Do teams need a working prototype before the event?", a: "The first round is a PPT. Only round 2 requires a prototype. If you want to be well prepared, you may start working on the prototype as well." },
   { q: "What should be included in the PPT?", a: "Problem statement, solution, tech stack, innovation and USP, and how it is useful in real life." },
   { q: "How does shortlisting work?", a: "Teams are shortlisted on a scoring system covering Presentation, Design thinking, Feasibility, Innovation, Product market fit and Pitch/Q&A." },
-  { q: "Is there a registration fee?", a: "₹400 per team for early bird, ₹500 for late registrations." },
+  { q: "Is there a registration fee?", a: "Yes. ₹400 per team for early bird and ₹500 per team for late registrations. The fee is per team, not per participant." },
+  { q: "What is the early bird offer?", a: "Registering by 29 October 2026 costs ₹400 per team with code NOOREARLY. Registrations from 30 October to 1 November 2026 cost ₹500 per team." },
   { q: "Are food, travel or accommodation provided?", a: "Food, a bus from the metro to the college, and stay are provided. Stay costs ₹350 per head." },
+  { q: "Is stay provided, and what does it cost?", a: "Yes, stay is provided. It costs ₹350 per head." },
   { q: "Will participants receive certificates?", a: "Yes." },
   { q: "How can a company or college partner with Noor?", a: "Reach out to us at contact@noorhackathon.com. We look forward to working with you." },
 ];
