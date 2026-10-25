@@ -33,7 +33,7 @@ export function Hero() {
         <p className="hero__mode">{event.mode}</p>
         <Countdown />
         <div className="cta">
-          <a className="btn btn--gold" href={register("hero")}>Register on Unstop</a>
+          <a className="btn--shiny" href={register("hero")}><span>Register on Unstop</span></a>
           {links.brochure ? (
             <a className="btn" href={links.brochure} target="_blank" rel="noopener noreferrer">Download brochure</a>
           ) : (
@@ -186,7 +186,7 @@ export function Register({ qr }: { qr: string | null }) {
         <div className="reg">
           <ol className="steps">{steps.map((s) => <li key={s}>{s}</li>)}</ol>
           <aside className="reg__side">
-            <a className="btn btn--gold" href={register("how")}>Register on Unstop</a>
+            <a className="btn--shiny" href={register("how")}><span>Register on Unstop</span></a>
             {qr && (
               <figure className="qr">
                 <img src={qr} width={180} height={180} alt="QR code that opens the official Unstop registration page" />
