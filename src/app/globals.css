@@ -225,6 +225,8 @@ ul, ol { padding: 0; list-style: none; }
 /* Team + contact + footer */
 .team { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 20px; text-align: center; }
 .team li { display: flex; flex-direction: column; align-items: center; gap: 8px; padding: 32px 16px; border: 1px solid var(--line); }
+/* Founder sits in the middle on wide screens; stays first when stacked. */
+@media (min-width: 781px) { .team li:nth-child(1) { order: 2; } .team li:nth-child(2) { order: 1; } .team li:nth-child(3) { order: 3; } }
 .team svg { width: 14px; color: var(--gold); }
 .team__name { font: 400 1.5rem var(--display); }
 .team__role { font: 600 0.66rem var(--body); letter-spacing: 0.26em; text-transform: uppercase; color: var(--gold-soft); }
