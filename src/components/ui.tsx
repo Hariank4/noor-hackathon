@@ -32,6 +32,7 @@ const icons: Record<string, ReactNode> = {
   venus: <><circle cx="12" cy="9" r="5" /><path d="M12 14v8M9 18h6" /></>,
   heart: <><path d="M12 20s-8-5-8-11a4.5 4.5 0 018-2.5A4.5 4.5 0 0120 9c0 6-8 11-8 11z" /><path d="M6 11h3l1.5-2.5 2 4 1.5-1.5H18" /></>,
   city: <><path d="M4 21V9h6v12M10 21V4h6v17M16 21V11h4v10" /><path d="M6.5 12h1M6.5 15h1M12.5 7h1M12.5 10h1M12.5 13h1M12.5 16h1" /></>,
+  chip: <><rect x="7" y="7" width="10" height="10" rx="1" /><path d="M10 10h4v4h-4zM9.5 4v3M14.5 4v3M9.5 17v3M14.5 17v3M4 9.5h3M4 14.5h3M17 9.5h3M17 14.5h3" /></>,
   gear: <><circle cx="12" cy="12" r="3" /><circle cx="12" cy="12" r="6.5" /><path d="M12 2.5v3M12 18.5v3M2.5 12h3M18.5 12h3M5.3 5.3l2.1 2.1M16.6 16.6l2.1 2.1M18.7 5.3l-2.1 2.1M7.4 16.6l-2.1 2.1" /></>,
 };
 

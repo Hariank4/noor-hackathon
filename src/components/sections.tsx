@@ -68,12 +68,15 @@ export function Themes() {
   return (
     <section id="themes" className="sec">
       <div className="wrap">
-        <Head eyebrow="Challenge themes" title="Six skies. Pick yours." />
+        <Head eyebrow="Challenge themes" title="Seven skies. Pick yours." />
         <ul className="themes">
           {themes.map((t) => (
             <li key={t.name}>
               <Icon name={t.icon} />
-              <span>{t.name}</span>
+              <div>
+                <h3>{t.name}</h3>
+                <p>{t.desc}</p>
+              </div>
             </li>
           ))}
         </ul>
@@ -131,10 +134,9 @@ export function Rubric() {
         <Head eyebrow="Judging criteria" title="How projects are judged" />
         <ol className="rubric">
           {rubric.map((r, i) => (
-            <li key={r.name}>
+            <li key={r}>
               <span className="rubric__n">{String(i + 1).padStart(2, "0")}</span>
-              <h3>{r.name}</h3>
-              <p>{r.text}</p>
+              <h3>{r}</h3>
             </li>
           ))}
         </ol>

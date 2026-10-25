@@ -23,12 +23,13 @@ export const event = {
 };
 
 export const themes = [
-  { icon: "leaf", name: "Environmental Sustainability" },
-  { icon: "shield", name: "Cybersecurity & Digital Safety" },
-  { icon: "venus", name: "Women's Safety & Empowerment" },
-  { icon: "heart", name: "Healthcare & Well-being" },
-  { icon: "city", name: "Smart Cities & Communities" },
-  { icon: "gear", name: "Smart Industry & Automation" },
+  { icon: "leaf", name: "Environmental Sustainability", desc: "Using technology to reduce pollution, manage waste, conserve water and protect the environment." },
+  { icon: "shield", name: "Cybersecurity & Digital Safety", desc: "Making the internet safer by protecting personal information, preventing online fraud and improving digital security." },
+  { icon: "venus", name: "Women's Safety & Empowerment", desc: "Creating technology that supports women's safety, access to opportunities, independence and inclusion." },
+  { icon: "heart", name: "Healthcare & Well-being", desc: "Developing solutions that make healthcare more accessible, improve health awareness and support physical and mental well-being." },
+  { icon: "city", name: "Smart Cities & Communities", desc: "Using technology to improve transport, public services, energy use, waste management and everyday urban life." },
+  { icon: "gear", name: "Smart Industry & Automation", desc: "Building solutions that make workplaces, factories and industrial processes safer, smarter and more efficient." },
+  { icon: "chip", name: "Artificial Intelligence & Machine Learning (AI/ML)", desc: "Using intelligent systems to analyse data, recognise patterns, make predictions and solve real-world problems through AI-powered applications." },
 ] as const;
 
 export const rounds = [
@@ -43,13 +44,8 @@ export const prizes = [
 ];
 export const wieAward: string | null = null; // BRD O-07: publish only after client confirms wording
 
-export const rubric = [
-  { name: "Innovation", text: "Originality, creativity, and uniqueness of the proposed solution." },
-  { name: "Technical Feasibility", text: "Practicality, functionality, and technical implementation." },
-  { name: "Impact", text: "Potential to solve a meaningful problem and benefit the intended users or community." },
-  { name: "Presentation", text: "Clarity of communication, demonstration, and explanation of the solution." },
-  { name: "Scalability", text: "Potential for future development, adoption, and expansion." },
-];
+// Shortlisting criteria as supplied by the organisers (25 Oct). No weights or descriptions yet.
+export const rubric = ["Presentation", "Design thinking", "Feasibility", "Innovation", "Product market fit", "Pitch/Q&A"];
 
 export const eligibility = [
   "Open to college and university students.",
@@ -102,22 +98,16 @@ export const team = [
   { name: "Hayat Atual Khan", role: "Organiser" },
 ];
 
-// Draft built only from supplied facts. Shown in preview only until the client approves it.
+// Supplied by the organisers (25 Oct). Shown in preview only until flags.showFaq is switched on.
 export const faqs = [
-  { q: "Who can participate?", a: "College and university students. Participants from different colleges can team up; inter-college teams are allowed." },
-  { q: "When and where is Noor Hackathon 2K26?", a: "2–3 November 2026 at Manav Rachna University, Faridabad, Haryana. It is an offline, on-campus event." },
-  { q: "How do I register?", a: "Through the official registration link on Unstop. Enter your team name and details for the leader and every member, pay the team fee, and submit the payment screenshot with the UTR / UPI reference." },
-  { q: "What is the registration deadline?", a: "1 November 2026." },
-  { q: "What does it cost?", a: "₹400 per team with code NOOREARLY until 29 October; ₹500 per team from 30 October to 1 November. The fee is per team, not per participant." },
-  { q: "How big can a team be?", a: "Teams have 2 to 5 members." },
-  { q: "What details do I need for each participant?", a: "Full name, course/program, college/university, location, gender, mobile number, email, current year of study and college ID card." },
-  { q: "When is my registration complete?", a: "Only after the required information and payment details are submitted as instructed. After verification you will get a confirmation email and a registration ID." },
-  { q: "What should I keep?", a: "Your registration ID and payment reference number." },
-  { q: "How many rounds are there?", a: "Two. Round 1 is the Presentation on 2 November and Round 2 is the Prototype on 3 November." },
-  { q: "How will projects be judged?", a: "On innovation, technical feasibility, impact, presentation and scalability. The detailed rubric and scoring weightage will be communicated by the organisers." },
-  { q: "What are the themes?", a: "Environmental Sustainability; Cybersecurity & Digital Safety; Women's Safety & Empowerment; Healthcare & Well-being; Smart Cities & Communities; Smart Industry & Automation." },
-  { q: "What are the prizes?", a: "Winner ₹15,000, first runner-up ₹10,000, second runner-up ₹5,000." },
-  { q: "Where will updates and the schedule be announced?", a: "Through official event channels: your registered email and @noorhackathon on Instagram." },
-  { q: "Is there an overnight stay?", a: "Where applicable, overnight stay arrangements will be communicated separately." },
-  { q: "How can I contact the organisers?", a: "Email contact@noorhackathon.com or call 9812358414." },
+  { q: "Who can participate?", a: "College students." },
+  { q: "Can students from any college register?", a: "Yes. Inter-college teams are also appreciated." },
+  { q: "What is the team size?", a: "2–5 members." },
+  { q: "Do teams need a working prototype before the event?", a: "The first round is a PPT. Only round 2 requires a prototype. If you want to be well prepared, you may start working on the prototype as well." },
+  { q: "What should be included in the PPT?", a: "Problem statement, solution, tech stack, innovation and USP, and how it is useful in real life." },
+  { q: "How does shortlisting work?", a: "Teams are shortlisted on a scoring system covering Presentation, Design thinking, Feasibility, Innovation, Product market fit and Pitch/Q&A." },
+  { q: "Is there a registration fee?", a: "₹400 per team for early bird, ₹500 for late registrations." },
+  { q: "Are food, travel or accommodation provided?", a: "Food, a bus from the metro to the college, and stay are provided. Stay costs ₹350 per head." },
+  { q: "Will participants receive certificates?", a: "Yes." },
+  { q: "How can a company or college partner with Noor?", a: "Reach out to us at contact@noorhackathon.com. We look forward to working with you." },
 ];
