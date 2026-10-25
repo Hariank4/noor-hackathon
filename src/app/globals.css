@@ -255,9 +255,28 @@ ul, ol { padding: 0; list-style: none; }
   .count__cell { min-width: 52px; }
 }
 
+/* Softness: gentle hover lift/glow, eased transitions, FAQ that opens smoothly. */
+::selection { background: rgba(226, 178, 32, 0.35); color: #fff; }
+:root { interpolate-size: allow-keywords; }
+.btn { transition: background 0.35s ease, color 0.35s ease, box-shadow 0.35s ease, transform 0.35s ease; }
+.nav__links a, .contact a { transition: color 0.3s ease, border-color 0.3s ease; }
+.nav { transition: background 0.4s ease; }
+@media (hover: hover) {
+  .btn:hover { transform: translateY(-2px); box-shadow: 0 8px 28px rgba(226, 178, 32, 0.18); }
+  .btn--off:hover { transform: none; box-shadow: none; }
+  .rounds li, .prizes li, .team li, .fees__card { transition: transform 0.45s ease, border-color 0.45s ease, box-shadow 0.45s ease; }
+  .rounds li:hover, .prizes li:hover, .team li:hover, .fees__card:hover { transform: translateY(-4px); border-color: rgba(226, 178, 32, 0.5); box-shadow: 0 14px 40px rgba(226, 178, 32, 0.07); }
+}
+.faq details::details-content { block-size: 0; overflow: clip; transition: block-size 0.4s ease, content-visibility 0.4s allow-discrete; }
+.faq details[open]::details-content { block-size: auto; }
+.faq summary { transition: color 0.3s ease; }
+.faq summary:hover { color: var(--gold-soft); }
+
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
   .sky::after, .orbit, .strip__track { animation: none; }
   .strip__view { overflow-x: auto; mask-image: none; }
   .sec .wrap > * { animation: none; }
+  *, *::before, *::after { transition-duration: 0.01ms !important; }
+  .btn:hover, .rounds li:hover, .prizes li:hover, .team li:hover, .fees__card:hover { transform: none; }
 }
