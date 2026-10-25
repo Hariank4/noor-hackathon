@@ -39,8 +39,8 @@ export const rounds = [
 
 export const prizes = [
   { rank: "Winner", amount: "₹15,000", perk: "Internship opportunity" },
-  { rank: "First runner-up", amount: "₹10,000" },
-  { rank: "Second runner-up", amount: "₹5,000" },
+  { rank: "First runner-up", amount: "₹10,000", perk: "Internship opportunity" },
+  { rank: "Second runner-up", amount: "₹5,000", perk: "Internship opportunity" },
 ];
 
 // Shortlisting criteria as supplied by the organisers (25 Oct). No weights or descriptions yet.
