@@ -118,6 +118,7 @@ export function Prizes() {
             <li key={p.rank} className={i === 0 ? "is-top" : undefined}>
               <span className="prizes__rank">{p.rank}</span>
               <span className="prizes__amt">{p.amount}</span>
+              {p.perk && <span className="prizes__perk">+ {p.perk}</span>}
             </li>
           ))}
         </ul>
@@ -316,6 +317,10 @@ export function Footer() {
         <p>© 2026 {event.name}</p>
         <p>Register only through the official Unstop link on this site.</p>
         <a href="/privacy">Privacy</a>
+        <p>
+          Made by <a href={links.authorSite} target="_blank" rel="noopener noreferrer">Hariank Juneja</a>
+          {" · "}<a href={links.authorLinkedin} target="_blank" rel="noopener noreferrer">LinkedIn</a>
+        </p>
       </div>
     </footer>
   );

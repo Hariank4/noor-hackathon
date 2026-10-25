@@ -6,7 +6,7 @@ export const flags = {
   showFees: preview, // BRD O-03: client to confirm fees should be shown
   showFaq: true, // organiser-supplied FAQ, approved to show (25 Oct)
   showWhatsApp: false, // client to confirm the group link may be public
-  showWie: false, // BRD O-07: "WIE Theme Winner: $100 Fueler" unverified
+  showWie: true, // WIE Theme Winner: $100 AI credits, wording supplied by the organiser
 };
 
 export const links = {
@@ -19,6 +19,8 @@ export const links = {
   whatsapp: process.env.NEXT_PUBLIC_WHATSAPP_URL ?? "", // shown only if flags.showWhatsApp
   email: "contact@noorhackathon.com", // BRD O-01: spelling to be confirmed
   phone: "9812358414",
+  authorSite: "https://www.hariankjuneja.tech",
+  authorLinkedin: "https://www.linkedin.com/in/hariankjuneja",
 };
 
 export const withUtm = (url: string, content: string) => {

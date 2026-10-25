@@ -169,6 +169,7 @@ ul, ol { padding: 0; list-style: none; }
 .prizes li:nth-child(3) { order: 3; }
 .prizes .is-top { padding-block: clamp(44px, 7vw, 88px); border-color: var(--gold); background: radial-gradient(circle at 50% 0, rgba(226, 178, 32, 0.16), transparent 70%); }
 .prizes__rank { font: 600 0.68rem var(--body); letter-spacing: 0.3em; text-transform: uppercase; color: var(--gold-soft); }
+.prizes__perk { font: 600 0.66rem var(--body); letter-spacing: 0.24em; text-transform: uppercase; color: var(--gold-soft); }
 .prizes__amt { font: 300 clamp(2.2rem, 4.5vw, 3.6rem)/1 var(--display); color: var(--gold); }
 
 /* Rubric */
