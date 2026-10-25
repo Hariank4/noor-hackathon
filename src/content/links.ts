@@ -4,7 +4,7 @@ const preview = process.env.NEXT_PUBLIC_PREVIEW === "1";
 
 export const flags = {
   showFees: preview, // BRD O-03: client to confirm fees should be shown
-  showFaq: preview, // BRD: FAQ must be approved before publishing
+  showFaq: true, // organiser-supplied FAQ, approved to show (25 Oct)
   showWhatsApp: false, // client to confirm the group link may be public
   showWie: false, // BRD O-07: "WIE Theme Winner: $100 Fueler" unverified
 };
