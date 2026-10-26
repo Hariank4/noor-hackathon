@@ -96,6 +96,8 @@ export const team = [
   { name: "Gaurav Bansal", role: "Founder & Organiser" },
   { name: "Tanazza Muskan Mirza", role: "Organiser" },
   { name: "Hayat Ataul Khan", role: "Organiser" },
+  { name: "Dipika Chauhan", role: "Organiser" },
+  { name: "Manobhiram", role: "Organiser" },
 ];
 
 // Points of contact supplied by the organisers (26 Oct).
