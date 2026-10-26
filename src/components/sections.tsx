@@ -1,4 +1,4 @@
-import { event, themes, rounds, prizes, rubric, eligibility, rules, steps, fees, partners, team, contacts, faqs } from "../content/content";
+import { event, themes, rounds, prizes, rubric, eligibility, rules, steps, fees, partners, team, faqs } from "../content/content";
 import { flags, links } from "../content/links";
 import Countdown from "./Countdown";
 import { Head, Icon, Rule, Sparkle } from "./ui";
@@ -284,6 +284,7 @@ export function Team() {
               <Sparkle />
               <span className="team__name">{t.name}</span>
               <span className="team__role">{t.role}</span>
+              <a className="team__phone" href={`tel:+91${t.phone}`}>{t.phone}</a>
             </li>
           ))}
         </ul>
@@ -303,15 +304,6 @@ export function Contact() {
           <li><a href={links.instagram} target="_blank" rel="noopener noreferrer">Instagram @noorhackathon</a></li>
           {links.linkedin && <li><a href={links.linkedin} target="_blank" rel="noopener noreferrer">LinkedIn · Noor Hackathon</a></li>}
           {flags.showWhatsApp && <li><a href={links.whatsapp} target="_blank" rel="noopener noreferrer">WhatsApp group</a></li>}
-        </ul>
-        <ul className="people">
-          {contacts.map((c) => (
-            <li key={c.name}>
-              <span className="people__name">{c.name}</span>
-              <a href={`tel:+91${c.phone}`}>{c.phone}</a>
-              <a href={`mailto:${c.email}`}>{c.email}</a>
-            </li>
-          ))}
         </ul>
         <p className="closing">{event.closing}</p>
       </div>

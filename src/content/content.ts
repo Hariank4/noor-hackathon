@@ -92,21 +92,13 @@ export const partners = [
   { name: "Devnovate", logo: null },
 ];
 
+// Organisers with the phone number each has agreed to publish (26 Oct). Emails are deliberately not shown.
 export const team = [
-  { name: "Gaurav Bansal", role: "Founder & Organiser" },
-  { name: "Tanazza Muskan Mirza", role: "Organiser" },
-  { name: "Hayat Ataul Khan", role: "Organiser" },
-  { name: "Dipika Chauhan", role: "Organiser" },
-  { name: "Manobhiram", role: "Organiser" },
-];
-
-// Points of contact supplied by the organisers (26 Oct).
-export const contacts = [
-  { name: "Tanazza Muskan Mirza", phone: "9315067537", email: "tanazzamuskan@gmail.com" },
-  { name: "Dipika Chauhan", phone: "9667675678", email: "chauhandipika686@gmail.com" },
-  { name: "Hayat Ataul Khan", phone: "7870193814", email: "khanhayatataul@gmail.com" },
-  { name: "Gaurav Bansal", phone: "9812358414", email: "gauravbansal3106@gmail.com" },
-  { name: "Manobhiram", phone: "9030630974", email: "srirangammanobhiram@gmail.com" },
+  { name: "Gaurav Bansal", role: "Founder & Organiser", phone: "9812358414" },
+  { name: "Tanazza Muskan Mirza", role: "Organiser", phone: "9315067537" },
+  { name: "Hayat Ataul Khan", role: "Organiser", phone: "7870193814" },
+  { name: "Dipika Chauhan", role: "Organiser", phone: "9667675678" },
+  { name: "Manobhiram", role: "Organiser", phone: "9030630974" },
 ];
 
 // Supplied by the organisers (25 Oct). Shown in preview only until flags.showFaq is switched on.

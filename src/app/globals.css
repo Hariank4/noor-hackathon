@@ -234,11 +234,8 @@ ul, ol { padding: 0; list-style: none; }
 .contact { display: flex; flex-wrap: wrap; justify-content: center; gap: 12px 32px; font-size: 1.05rem; }
 .contact a { text-decoration: none; border-bottom: 1px solid var(--line); }
 .contact a:hover { border-color: var(--gold); }
-.people { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 16px; margin: 44px 0 8px; text-align: center; }
-.people li { display: flex; flex-direction: column; align-items: center; gap: 6px; padding: 24px 16px; border: 1px solid var(--line); }
-.people__name { font: 400 1.35rem var(--display); }
-.people a { color: var(--muted); font-size: 0.9rem; text-decoration: none; overflow-wrap: anywhere; transition: color 0.3s ease; }
-.people a:hover { color: var(--gold-soft); }
+.team__phone { margin-top: 4px; font-size: 0.95rem; color: var(--muted); text-decoration: none; transition: color 0.3s ease; }
+.team__phone:hover { color: var(--gold-soft); }
 .closing { margin-top: 56px; text-align: center; font: italic 300 clamp(1.4rem, 3.5vw, 2.2rem) var(--display); color: var(--gold-soft); }
 .foot { padding: 28px 0; border-top: 1px solid var(--line); font-size: 0.82rem; color: var(--muted); }
 .foot__credit, .foot__credit a { font-weight: 700; color: var(--gold); }
@@ -302,7 +299,7 @@ ul, ol { padding: 0; list-style: none; }
 /* Scroll reveal: pure CSS, only where supported */
 @supports (animation-timeline: view()) {
   .sec .wrap > *, .foot .wrap > *,
-  .themes li, .rounds li, .prizes li, .rubric li, .rules__list li, .team li, .people li, .fees__card, .faq details, .steps li, .reg__side > * {
+  .themes li, .rounds li, .prizes li, .rubric li, .rules__list li, .team li, .fees__card, .faq details, .steps li, .reg__side > * {
     animation: rise ease-out both; animation-timeline: view(); animation-range: entry 0% entry 40%;
   }
   @keyframes rise { from { opacity: 0; transform: translateY(24px); } }
@@ -343,7 +340,7 @@ ul, ol { padding: 0; list-style: none; }
   html { scroll-behavior: auto; }
   .sky::after, .orbit, .strip__track { animation: none; }
   .strip__view { overflow-x: auto; mask-image: none; }
-  .sec .wrap > *, .foot .wrap > *, .themes li, .rounds li, .prizes li, .rubric li, .rules__list li, .team li, .people li, .fees__card, .faq details, .steps li, .reg__side > * { animation: none; }
+  .sec .wrap > *, .foot .wrap > *, .themes li, .rounds li, .prizes li, .rubric li, .rules__list li, .team li, .fees__card, .faq details, .steps li, .reg__side > * { animation: none; }
   .foot__credit span { animation: none; }
   .btn--shiny, .btn--shiny::before, .btn--shiny::after, .btn--shiny span::before { animation: none; }
   *, *::before, *::after { transition-duration: 0.01ms !important; }
