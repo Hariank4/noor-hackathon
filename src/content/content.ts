@@ -94,8 +94,17 @@ export const partners = [
 
 export const team = [
   { name: "Gaurav Bansal", role: "Founder & Organiser" },
-  { name: "Tanazza Mushkan Mirza", role: "Organiser" },
-  { name: "Hayat Atual Khan", role: "Organiser" },
+  { name: "Tanazza Muskan Mirza", role: "Organiser" },
+  { name: "Hayat Ataul Khan", role: "Organiser" },
+];
+
+// Points of contact supplied by the organisers (26 Oct).
+export const contacts = [
+  { name: "Tanazza Muskan Mirza", phone: "9315067537", email: "tanazzamuskan@gmail.com" },
+  { name: "Dipika Chauhan", phone: "9667675678", email: "chauhandipika686@gmail.com" },
+  { name: "Hayat Ataul Khan", phone: "7870193814", email: "khanhayatataul@gmail.com" },
+  { name: "Gaurav Bansal", phone: "9812358414", email: "gauravbansal3106@gmail.com" },
+  { name: "Manobhiram", phone: "9030630974", email: "srirangammanobhiram@gmail.com" },
 ];
 
 // Supplied by the organisers (25 Oct). Shown in preview only until flags.showFaq is switched on.

@@ -16,7 +16,7 @@ export const links = {
   instagram: "https://www.instagram.com/noorhackathon/", // derived from @noorhackathon: verify
   linkedin: "", // client to supply
   whatsapp: process.env.NEXT_PUBLIC_WHATSAPP_URL ?? "", // shown only if flags.showWhatsApp
-  email: "contact@noorhackathon.com", // BRD O-01: spelling to be confirmed
+  email: "noorhackathon@gmail.com", // public contact; contact@noorhackathon.com is kept for sponsors/internal use
   phone: "9812358414",
   authorSite: "https://www.hariankjuneja.tech",
   authorLinkedin: "https://www.linkedin.com/in/hariankjuneja",
