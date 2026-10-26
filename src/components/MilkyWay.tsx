@@ -312,6 +312,8 @@ function EdgeBlurEffect({
  * Component config + prop resolution
  * ------------------------------------------------------------------ */
 
+// Lower resolution cap: the scene is soft, and 2x on scaled Windows screens made the blur passes very expensive.
+const MAX_DPR = 1.25
 const DEFAULT_PARTICLE_SIZE = 1
 const DEFAULT_CORE_COLOR = '#f5f5ff'
 const DEFAULT_ACCENT_COLOR = '#ffe6ad'
@@ -346,6 +348,8 @@ interface MilkyWayProps {
    rotationSpeed?: number
    /** Called once the first frames have rendered and the canvas is visible. */
    onReady?: () => void
+   /** Called instead of onReady when the first frames render too slowly (< ~24 fps). */
+   onSlow?: () => void
 }
 
 function resolveMilkyWayProps({
@@ -374,7 +378,7 @@ function resolveMilkyWayProps({
 }
 
 const CFG = {
-   texSize: 400,
+   texSize: 256, // 65k particles; 400 (160k) lagged on integrated GPUs
    maxRadius: 3.5,
    holeRadius: 1.2,
    holeEdgeBand: 1.5,
@@ -1064,7 +1068,7 @@ const SmokeFlow = React.memo(function SmokeFlow({ particleSize, coreColor, accen
    const mat = useMemo(() => new THREE.ShaderMaterial({
       uniforms: {
          uPosition: { value: posTex },
-         uPixelRatio: { value: Math.min(typeof window !== 'undefined' ? window.devicePixelRatio : 1, 2) },
+         uPixelRatio: { value: Math.min(typeof window !== 'undefined' ? window.devicePixelRatio : 1, MAX_DPR) },
          uTime: { value: 0 },
          uParticleSize: { value: particleSize },
          uCoreColor: { value: new THREE.Color(coreColor) },
@@ -1242,7 +1246,7 @@ const MilkyWayGPGPU = React.memo(function MilkyWayGPGPU({ particleSize, coreColo
    const mat = useMemo(() => new THREE.ShaderMaterial({
       uniforms: {
          uPosition: { value: posTex },
-         uPixelRatio: { value: Math.min(typeof window !== 'undefined' ? window.devicePixelRatio : 1, 2) },
+         uPixelRatio: { value: Math.min(typeof window !== 'undefined' ? window.devicePixelRatio : 1, MAX_DPR) },
          uParticleSize: { value: particleSize },
          uCoreColor: { value: new THREE.Color(coreColor) },
          uAccentColor: { value: new THREE.Color(accentColor) },
@@ -1349,16 +1353,21 @@ function SceneBackground({ color }: { color: string }) {
    return <color attach="background" args={[color]} />
 }
 
-function SceneReady({ onReady }: { onReady: () => void }) {
+function SceneReady({ onReady, onSlow }: { onReady: () => void; onSlow?: () => void }) {
    const frameCountRef = useRef(0)
    const readyRef = useRef(false)
+   const t0Ref = useRef(0)
 
    useFrame(() => {
       if (readyRef.current) return
       frameCountRef.current += 1
+      // Skip the first frames (shader compile), then time 16 frames.
+      if (frameCountRef.current === 8) t0Ref.current = performance.now()
       if (frameCountRef.current < 24) return
       readyRef.current = true
-      onReady()
+      const fps = 16000 / (performance.now() - t0Ref.current)
+      if (fps < 24 && onSlow) onSlow()
+      else onReady()
    })
 
    return null
@@ -1374,6 +1383,7 @@ export default function MilkyWay({
    rotation = typeof mouseInfluence === 'number' ? mouseInfluence : DEFAULT_ROTATION,
    rotationSpeed = DEFAULT_ROTATION_SPEED,
    onReady,
+   onSlow,
 }: MilkyWayProps = {}) {
    const resolvedProps = useMemo(
       () =>
@@ -1419,7 +1429,7 @@ export default function MilkyWay({
       const updateViewport = () => {
          queueMicrotask(() => {
             setViewport({
-               dpr: Math.max(1, Math.min(2, window.devicePixelRatio || 1)),
+               dpr: Math.max(1, Math.min(MAX_DPR, window.devicePixelRatio || 1)),
             })
          })
       }
@@ -1452,7 +1462,7 @@ export default function MilkyWay({
                   gl.setClearColor(resolvedProps.backgroundColor, 1)
                }}
             >
-               <SceneReady onReady={() => { setIsSceneReady(true); onReady?.() }} />
+               <SceneReady onReady={() => { setIsSceneReady(true); onReady?.() }} onSlow={onSlow} />
                <SceneBackground color={resolvedProps.backgroundColor} />
                <BackgroundStars color={resolvedProps.coreColor} />
                <Center rotation={[degToRad(-10), degToRad(0), degToRad(0)]} position={[-1.2, 0.5, 0]}>
@@ -1481,7 +1491,6 @@ export default function MilkyWay({
                </Center>
                <EffectComposer>
                   <EdgeBlurEffect blurStrength={1.2} blurStart={0.2} />
-                  <EdgeBlurEffect blurType="classic" blurStrength={0.3} blurStart={0.1} />
                   <Vignette opacity={0.5} offset={0.8} darkness={0.7} />
                </EffectComposer>
             </Canvas>

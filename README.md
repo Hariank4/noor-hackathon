@@ -57,7 +57,7 @@ registration URL with `utm_content=qr`, so it keeps working even if this site is
 ## Intro
 
 `src/components/Loader.tsx` plays a galaxy intro once per browser session. It is skipped for
-`prefers-reduced-motion`, has a Skip button, and gives up after 6 seconds if WebGL stalls.
+`prefers-reduced-motion`, has a Skip button, and gives up after 4 seconds, and skips itself on slow or low-core machines if WebGL stalls.
 
 ## Deploy
 
