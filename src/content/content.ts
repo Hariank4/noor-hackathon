@@ -9,7 +9,6 @@ export const event = {
   dates: "2 – 3 November 2026",
   venue: "Manav Rachna University, Faridabad, Haryana",
   mode: "Offline · On campus",
-  deadline: "1 November 2026",
   startsAt: "2026-11-02T00:00:00+05:30",
   description:
     "An on-campus hackathon bringing college and university students together to create impactful solutions through technology, creativity and problem-solving.",
@@ -77,11 +76,6 @@ export const steps = [
   "Keep your payment reference. After verification you will receive a confirmation email and registration ID.",
 ];
 
-export const fees = {
-  early: { amount: "₹400", code: "NOOREARLY", until: "29 October 2026" },
-  regular: { amount: "₹500", range: "30 October – 1 November 2026" },
-};
-
 // Order follows the client's poster ribbon. `logo: null` renders a text tile until the original file arrives.
 export const partners = [
   { name: "Manav Rachna University", logo: "/partners/mru.png" },
@@ -101,7 +95,7 @@ export const team = [
   { name: "Manobhiram", role: "Organiser", phone: "9030630974" },
 ];
 
-// Supplied by the organisers (25 Oct). Shown in preview only until flags.showFaq is switched on.
+// Supplied by the organisers (25 Oct).
 export const faqs = [
   { q: "Who can participate?", a: "College students." },
   { q: "Can students from any college register?", a: "Yes. Inter-college teams are also appreciated." },

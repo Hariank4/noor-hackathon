@@ -1,4 +1,4 @@
-import { event, themes, rounds, prizes, rubric, eligibility, rules, steps, fees, partners, team, faqs } from "../content/content";
+import { event, themes, rounds, prizes, rubric, eligibility, rules, steps, partners, team, faqs } from "../content/content";
 import { flags, links } from "../content/links";
 import Countdown from "./Countdown";
 import { Head, Icon, Rule, Sparkle } from "./ui";
@@ -170,20 +170,6 @@ export function Register({ qr }: { qr: string | null }) {
     <section id="register" className="sec">
       <div className="wrap">
         <Head eyebrow="Registration" title="Be the Noor. Register your team." />
-        {flags.showFees && (
-          <div className="fees">
-            <div className="fees__card">
-              <p className="eyebrow">Early bird · until {fees.early.until}</p>
-              <p className="fees__amt">{fees.early.amount} <span>per team</span></p>
-              <p>Use code <strong className="code">{fees.early.code}</strong></p>
-            </div>
-            <div className="fees__card">
-              <p className="eyebrow">Regular · {fees.regular.range}</p>
-              <p className="fees__amt">{fees.regular.amount} <span>per team</span></p>
-              <p>Charged per team, not per participant.</p>
-            </div>
-          </div>
-        )}
         <div className="reg">
           <ol className="steps">{steps.map((s) => <li key={s}>{s}</li>)}</ol>
           <aside className="reg__side">
@@ -302,8 +288,6 @@ export function Contact() {
           <li><a href={`mailto:${links.email}`}>{links.email}</a></li>
           <li><a href={`tel:+91${links.phone}`}>{links.phone}</a></li>
           <li><a href={links.instagram} target="_blank" rel="noopener noreferrer">Instagram @noorhackathon</a></li>
-          {links.linkedin && <li><a href={links.linkedin} target="_blank" rel="noopener noreferrer">LinkedIn · Noor Hackathon</a></li>}
-          {flags.showWhatsApp && <li><a href={links.whatsapp} target="_blank" rel="noopener noreferrer">WhatsApp group</a></li>}
         </ul>
         <p className="closing">{event.closing}</p>
       </div>

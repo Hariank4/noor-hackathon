@@ -1,11 +1,6 @@
 // Single place for every outbound link and "not yet approved" switch.
-// Items awaiting client approval are hidden in production unless NEXT_PUBLIC_PREVIEW=1.
-const preview = process.env.NEXT_PUBLIC_PREVIEW === "1";
-
 export const flags = {
-  showFees: preview, // BRD O-03: client to confirm fees should be shown
   showFaq: true, // organiser-supplied FAQ, approved to show (25 Oct)
-  showWhatsApp: false, // client to confirm the group link may be public
 };
 
 export const links = {
@@ -14,8 +9,6 @@ export const links = {
   // Generic MRU pin until the client approves the exact venue location (BRD O-05).
   mapQuery: "Manav Rachna University, Faridabad",
   instagram: "https://www.instagram.com/noorhackathon/", // derived from @noorhackathon: verify
-  linkedin: "", // client to supply
-  whatsapp: process.env.NEXT_PUBLIC_WHATSAPP_URL ?? "", // shown only if flags.showWhatsApp
   email: "noorhackathon@gmail.com", // public contact; contact@noorhackathon.com is kept for sponsors/internal use
   phone: "9812358414",
   authorSite: "https://www.hariankjuneja.tech",

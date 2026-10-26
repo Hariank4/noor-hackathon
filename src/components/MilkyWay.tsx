@@ -37,7 +37,6 @@ interface VisibilityGateOptions {
 
 interface VisibilityGate {
    readonly isActive: boolean
-   observe: (nextRoot?: RafRoot) => void
    destroy: () => void
 }
 
@@ -101,17 +100,6 @@ function createVisibilityGate({
    return {
       get isActive() {
          return isActive()
-      },
-      observe(nextRoot?: RafRoot) {
-         if (destroyed) return
-         if (nextRoot != null) root = nextRoot
-         if (observer) {
-            observer.disconnect()
-            observer = null
-         }
-         onscreen = true
-         bindObserver()
-         emit()
       },
       destroy() {
          if (destroyed) return
@@ -182,63 +170,6 @@ void mainImage(const in vec4 inputColor, const in vec2 uv, out vec4 outputColor)
 }
 `
 
-const frostedBlurFragmentShader = /* glsl */ `
-uniform float uBlurStrength;
-uniform float uBlurStart;
-uniform vec2 uResolution;
-
-void mainImage(const in vec4 inputColor, const in vec2 uv, out vec4 outputColor) {
-  vec2 center = uv - 0.5;
-  float dist = length(center);
-
-  float blurAmount = smoothstep(uBlurStart, 0.75, dist) * uBlurStrength;
-
-  if (blurAmount < 0.001) {
-    outputColor = inputColor;
-    return;
-  }
-
-  vec2 texelSize = vec2(1.0 / uResolution.x, 1.0 / uResolution.y);
-
-  const int TAPS = 12;
-  vec2 offsets[12];
-  offsets[0] = vec2(-0.326, -0.406);
-  offsets[1] = vec2(-0.840, -0.074);
-  offsets[2] = vec2(-0.696, 0.457);
-  offsets[3] = vec2(-0.203, 0.621);
-  offsets[4] = vec2( 0.962, -0.195);
-  offsets[5] = vec2( 0.473, -0.480);
-  offsets[6] = vec2( 0.519, 0.767);
-  offsets[7] = vec2( 0.185, -0.893);
-  offsets[8] = vec2( 0.507, 0.064);
-  offsets[9] = vec2( 0.896, 0.412);
-  offsets[10] = vec2(-0.322, -0.933);
-  offsets[11] = vec2(-0.792, -0.598);
-
-  float radius = blurAmount * 12.0;
-
-  vec4 blurred = inputColor;
-  float totalWeight = 1.0;
-
-  for (int i = 0; i < TAPS; i++) {
-    vec2 offset = offsets[i] * radius * texelSize;
-    vec4 s = texture2D(inputBuffer, uv + offset);
-    blurred += s;
-    totalWeight += 1.0;
-  }
-
-  blurred /= totalWeight;
-
-  vec3 white = vec3(1.0, 1.0, 1.0);
-  float veilAlpha = 0.4 * blurAmount;
-
-  vec3 outRgb = mix(blurred.rgb, white, veilAlpha);
-  float outAlpha = blurred.a;
-
-  outputColor = vec4(outRgb, outAlpha);
-}
-`
-
 interface EdgeBlurEffectImplOptions {
    blurStrength?: number
    blurStart?: number
@@ -251,7 +182,7 @@ class EdgeBlurEffectImpl extends Effect {
       blurStrength = 1.0,
       blurStart = 0.25,
       resolution = [1280, 720],
-      frag = frostedBlurFragmentShader,
+      frag = classicBlurFragmentShader,
    }: EdgeBlurEffectImplOptions = {}) {
       const uniforms = new Map<string, Uniform<number | Vector2>>([
          ['uBlurStrength', new Uniform(blurStrength)],
@@ -275,18 +206,14 @@ class EdgeBlurEffectImpl extends Effect {
 }
 
 interface EdgeBlurEffectProps {
-   blurType?: 'classic' | 'frosted'
    blurStrength?: number
    blurStart?: number
 }
 
 function EdgeBlurEffect({
-   blurType = 'classic',
    blurStrength = 1.0,
    blurStart = 0.25,
 }: EdgeBlurEffectProps) {
-   const frag = blurType === 'classic' ? classicBlurFragmentShader : frostedBlurFragmentShader
-
    const effect = useMemo(() => {
       let width = 1280,
          height = 720
@@ -294,8 +221,8 @@ function EdgeBlurEffect({
          width = window.innerWidth
          height = window.innerHeight
       }
-      return new EdgeBlurEffectImpl({ blurStrength, blurStart, resolution: [width, height], frag })
-   }, [blurStrength, blurStart, frag])
+      return new EdgeBlurEffectImpl({ blurStrength, blurStart, resolution: [width, height] })
+   }, [blurStrength, blurStart])
 
    useEffect(() => {
       if (typeof window === 'undefined') return
@@ -399,16 +326,6 @@ const CFG = {
       outer: 0.9,
       sparkle: 1.1,
    },
-   colors: {
-      core: [0.96, 0.96, 1.0],
-      mid: [1.0, 0.9, 0.68],
-      outer: [0.88, 0.36, 0.07],
-      sparkleA: [0.4, 0.78, 1.0],
-      sparkleB: [0.25, 0.95, 0.88],
-      sparkleC: [1.0, 0.85, 0.25],
-      sparkleD: [1.0, 0.22, 0.06],
-      sparkleE: [0.65, 0.3, 1.0],
-   },
 }
 
 const SMOKE_CFG = {
@@ -435,13 +352,6 @@ const SMOKE_CFG = {
       magenta: 1.1,
       violet: 0.95,
       outer: 0.75,
-   },
-   colors: {
-      core: [0.98, 0.97, 1.0],
-      cyan: [0.32, 0.84, 1.0],
-      magenta: [0.96, 0.42, 1.0],
-      violet: [0.52, 0.38, 0.95],
-      outer: [0.18, 0.24, 0.58],
    },
    seed: 7777,
 }
