@@ -78,11 +78,11 @@ export const steps = [
 
 // Order follows the client's poster ribbon. `logo: null` renders a text tile until the original file arrives.
 export const partners = [
-  { name: "Manav Rachna University", logo: "/partners/mru.png" },
-  { name: "IEEE MRU Student Branch", logo: "/partners/ieee-mru.png" },
-  { name: "Institution's Innovation Council", logo: "/partners/iic.png" },
-  { name: "School of Engineering", logo: "/partners/soe.png" },
-  { name: "HackWithIndia", logo: "/partners/hackwithindia.png" },
+  { name: "Manav Rachna University", logo: "/partners/mru.webp" },
+  { name: "IEEE MRU Student Branch", logo: "/partners/ieee-mru.webp" },
+  { name: "Institution's Innovation Council", logo: "/partners/iic.webp" },
+  { name: "School of Engineering", logo: "/partners/soe.webp" },
+  { name: "HackWithIndia", logo: "/partners/hackwithindia.webp" },
   { name: "Devnovate", logo: null },
 ];
 

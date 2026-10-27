@@ -22,7 +22,7 @@ export function Hero() {
       <div className="wrap hero__in">
         <p className="eyebrow">{event.presenters} presents</p>
         <h1 className="hero__logo">
-          <img src="/brand/noor-wordmark.png" width={698} height={291} alt={`${event.name}: ${event.tagline}`} fetchPriority="high" />
+          <img src="/brand/noor-wordmark.webp" width={698} height={291} alt={`${event.name}: ${event.tagline}`} fetchPriority="high" />
         </h1>
         <p className="hero__year">2K26</p>
         <p className="hero__tag">{event.tagline}</p>
