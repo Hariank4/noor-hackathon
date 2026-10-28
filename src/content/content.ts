@@ -88,11 +88,11 @@ export const partners = [
 
 // Organisers with the phone number each has agreed to publish (26 Oct). Emails are deliberately not shown.
 export const team = [
-  { name: "Gaurav Bansal", role: "Founder & Organiser", phone: "9812358414" },
-  { name: "Tanazza Muskan Mirza", role: "Organiser", phone: "9315067537" },
-  { name: "Hayat Ataul Khan", role: "Organiser", phone: "7870193814" },
-  { name: "Dipika Chauhan", role: "Organiser", phone: "9667675678" },
-  { name: "Manobhiram", role: "Organiser", phone: "9030630974" },
+  { name: "Gaurav Bansal", role: "Founder & Organiser"},
+  { name: "Tanazza Muskan Mirza", role: "Organiser"},
+  { name: "Hayat Ataul Khan", role: "Organiser"},
+  { name: "Dipika Chauhan", role: "Co-Organiser"},
+  { name: "Manobhiram", role: "Co-Organiser"},
 ];
 
 // Supplied by the organisers (25 Oct).
