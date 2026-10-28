@@ -270,7 +270,6 @@ export function Team() {
               <Sparkle />
               <span className="team__name">{t.name}</span>
               <span className="team__role">{t.role}</span>
-              <a className="team__phone" href={`tel:+91${t.phone}`}>{t.phone}</a>
             </li>
           ))}
         </ul>

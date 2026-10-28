@@ -230,8 +230,6 @@ ul, ol { padding: 0; list-style: none; }
 .contact { display: flex; flex-wrap: wrap; justify-content: center; gap: 12px 32px; font-size: 1.05rem; }
 .contact a { text-decoration: none; border-bottom: 1px solid var(--line); }
 .contact a:hover { border-color: var(--gold); }
-.team__phone { margin-top: 4px; font-size: 0.95rem; color: var(--muted); text-decoration: none; transition: color 0.3s ease; }
-.team__phone:hover { color: var(--gold-soft); }
 .closing { margin-top: 56px; text-align: center; font: italic 300 clamp(1.4rem, 3.5vw, 2.2rem) var(--display); color: var(--gold-soft); }
 .foot { padding: 28px 0; border-top: 1px solid var(--line); font-size: 0.82rem; color: var(--muted); }
 .foot__credit, .foot__credit a { font-weight: 700; color: var(--gold); }
