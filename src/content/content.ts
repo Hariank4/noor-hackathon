@@ -86,7 +86,7 @@ export const partners = [
   { name: "Devnovate", logo: null },
 ];
 
-// Organisers with the phone number each has agreed to publish (26 Oct). Emails are deliberately not shown.
+// Organising team. No personal phone numbers or emails are shown on the site.
 export const team = [
   { name: "Gaurav Bansal", role: "Founder & Organiser"},
   { name: "Tanazza Muskan Mirza", role: "Organiser"},
