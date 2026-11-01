@@ -63,7 +63,7 @@ export const rules = [
   "Participants must follow campus safety, security and venue regulations.",
   "Organisers may reasonably change the schedule or arrangements; significant updates will be communicated through official channels.",
   "Monitor your registered email, retain your registration ID and payment reference, and follow official event announcements.",
-  "Overnight stay arrangements, if applicable, will be communicated separately.",
+  "Overnight stay is provided free of charge; arrangements will be communicated separately.",
   "The detailed rubric, scoring weights, submission requirements and round instructions will be communicated by the organisers.",
 ];
 
